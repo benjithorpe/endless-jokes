@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Random Quote Generator</h1>
+
+    <main>
+        <form>
+            <div>
+                <label><input type="radio" name="quote" checked> Facts</label>
+                <label><input type="radio" name="quote"> Random</label>
+            </div>
+
+
+            <textarea name="" id="text" placeholder="Less is More. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium nesciunt ut porro at eaque. Eius consectetur dolorum, ducimus consequatur non dignissimos reiciendis temporibus, aspernatur recusandae, optio voluptatem aliquam vero animi!
+            "></textarea>
+            
+            <input type="button" value="Next Quote" onClick="getQuote();">
+        </form>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -3,31 +3,31 @@ var facts = [
     "If you want to increase your chances of making a good impression in a meeting, sit toward the middle of the table.",
     "If you have a song stuck in your head, one of the best ways to get it out of your head is to chew gum, according to study.",
     "Social media is psychologically designed to be addictive.",
-    "Tell yourself you'd just quickly check your Facebook notifications, and 15 minutes later you're still scrolling?" 
-        + "You're not alone. Part of that has to do with infinite scroll: "
-        + "When you can stay on the site without actually interacting and clicking, your brain doesn't get that \"stop\" cue.",
+    "Tell yourself you'd just quickly check your Facebook notifications, and 15 minutes later you're still scrolling? "
+    + "You're not alone. Part of that has to do with infinite scroll: "
+    + "When you can stay on the site without actually interacting and clicking, your brain doesn't get that \"stop\" cue.",
     "When one rule seems too strict, we want to break more.",
     "Psychologists have studied a phenomenon called reactance: "
-        + "When people perceive certain freedoms being taken away, they not only break that rule, but they break even more",
+    + "When people perceive certain freedoms being taken away, they not only break that rule, but they break even more",
     "Food tastes better when someone else makes it.",
     "We always try to return a favor.",
     "It's not just good manners—the \"rule of reciprocity\" suggests that we're programmed to want to help someone who's helped us",
     "People sincerely believe that their negative opinions about others are truthful and have no connection with them "
-        + "and their self-confidence. In fact, humiliating others helps them restore their own self-esteem.",
+    + "and their self-confidence. In fact, humiliating others helps them restore their own self-esteem.",
     "We're convinced that the future is bright.",
     "Doesn't matter if you like where you're at right now or not—most of us have an \"optimism bias\" "
-        + "that convinces us the future will be better than the present.",
-    "If your boss yells a lot, it’s just a matter of time you’ll want his position for yourself, " 
-        + "and having a violent boss indicates you will also be violent.",
+    + "that convinces us the future will be better than the present.",
+    "If your boss yells a lot, it’s just a matter of time you’ll want his position for yourself, "
+    + "and having a violent boss indicates you will also be violent.",
     "Money can buy happiness, but only up to a certain point.",
     "Research shows that in terms of income, people have a \"satiation point\" where happiness peaks and earning more won't actually make you happier",
-    "Lying requires a lot of mental effort. A person who is lying has to keep in mind two things at the same time " 
-        + "– the lie, or what they are saying, and the truth, or what they are trying to hide." 
-        + "As a result, a liar uses simple sentences and finds it more difficult to cope with mental tasks.",
-    "Long-term couples will feel more attracted to each other when they regularly engage in novel " 
-        + "and exciting joint activities that involve working together to achieve a goal.",
-    "Behavior affects morality. People who lied, betrayed someone, or committed other immoral acts " 
-        + "begin to perceive what is good or bad in another way.",
+    "Lying requires a lot of mental effort. A person who is lying has to keep in mind two things at the same time "
+    + "– the lie, or what they are saying, and the truth, or what they are trying to hide."
+    + "As a result, a liar uses simple sentences and finds it more difficult to cope with mental tasks.",
+    "Long-term couples will feel more attracted to each other when they regularly engage in novel "
+    + "and exciting joint activities that involve working together to achieve a goal.",
+    "Behavior affects morality. People who lied, betrayed someone, or committed other immoral acts "
+    + "begin to perceive what is good or bad in another way.",
     "Power makes people care less about others.",
     "Money and power reduces your empathy",
 
@@ -74,9 +74,7 @@ var facts = [
     // 💠"Never odd or even" spelled backward is still "Never odd or even."
 ];
 
-function getQuote(){
-    var randomNumber = Math.round(Math.random() * facts.length);
-    if(randomNumber !== undefined){
-        document.getElementById("text").value = facts[randomNumber];
-    }
+function getQuote() {
+    var randomNumber = Math.round(Math.random() * (facts.length - 1));
+    document.getElementById("text").value = facts[randomNumber];
 }

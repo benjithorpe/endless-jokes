@@ -55,13 +55,23 @@ input[type="button"]{
     font-size: 16px;
     height: 40px;
     cursor: pointer;
-    width: 100px;
+    width: fit-content;
+    padding: 10px;
     color: white;
     border: none;
     border-radius: 5px;
     background-color: rgb(12, 173, 12, 0.8);
 }
 
+.hide-prev-btn{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.enable-prev-btn{
+    opacity: 1;
+    pointer-events: all;
+}
 
 
 @media screen and (max-width: 770px){

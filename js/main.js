@@ -1,7 +1,20 @@
-function getQuote() {
+function getNextQuote() {
     var randomNumber = Math.round(Math.random() * (facts.length - 1));
     document.getElementById("text").value = facts[randomNumber];
+    previousQuotes.push(facts[randomNumber]);
+    document.getElementById("prev").classList += " enable-prev-btn";
 }
+
+function getPreviousQuote(){
+    if(previousQuotes.length === 0){
+        document.getElementById("prev").classList.remove("enable-prev-btn");
+    }else{
+        document.getElementById("text").value = previousQuotes.pop();
+    }
+}
+
+var previousQuotes = [];
+// var nextQuotes = [];
 
 var facts = [
     "Despite the world’s population increasing by about 2M people every day, humans now feel more alone than ever before.",

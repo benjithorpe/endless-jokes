@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
+    <title>Quote Generator</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Random Quote Generator</h1>
+    <h1>Quote Generator</h1>
 
     <main>
         <form>
             <label><input type="radio" name="quote" checked> Facts</label>
             <label><input type="radio" name="quote" disabled> Random</label>
 
-            <textarea name="" id="text" placeholder="Less is More."></textarea>
+            <textarea name="" placeholder="Less is More."></textarea>
 
-            <input type="button" value="Next Quote" onClick="getNextQuote();">
+            <input type="button" value="Next Quote" id="nextBtn">
             <br>
-            <input class="hide-prev-btn" id="prev" type="button" value="Previous Quote" onClick="getPreviousQuote();">
+            <input class="hide-prev-btn" id="prevBtn" type="button" value="Previous Quote">
         </form>
     </main>
 
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
-
 </html>

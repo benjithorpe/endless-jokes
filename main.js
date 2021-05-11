@@ -1,21 +1,25 @@
-function getNextQuote() {
-    var randomNumber = Math.round(Math.random() * (facts.length - 1));
-    document.getElementById("text").value = facts[randomNumber];
-    previousQuotes.push(facts[randomNumber]);
-    document.getElementById("prev").classList += " enable-prev-btn";
-}
+const nextButton = document.getElementById('nextBtn');
+const prevButton = document.getElementById('prevBtn');
+const textarea = document.querySelector('textarea');
 
-function getPreviousQuote(){
+nextBtn.addEventListener('click', function(){
+    let randomNumber = Math.round(Math.random() * (facts.length - 1));
+    textarea.value = facts[randomNumber];
+    previousQuotes.push(facts[randomNumber]);
+    prevBtn.classList.add("enable-prev-btn");
+});
+
+prevBtn.addEventListener('click', function(){
     if(previousQuotes.length === 0){
-        document.getElementById("prev").classList.remove("enable-prev-btn");
+        prevBtn.classList.remove("enable-prev-btn");
     }else{
-        document.getElementById("text").value = previousQuotes.pop();
+        textarea.value = previousQuotes.pop();
     }
-}
+});
+
 
 var previousQuotes = [];
 // var nextQuotes = [];
-
 var facts = [
     "Despite the world’s population increasing by about 2M people every day, humans now feel more alone than ever before.",
     "If you want to increase your chances of making a good impression in a meeting, sit toward the middle of the table.",
@@ -93,4 +97,3 @@ var facts = [
     "Twins have a very high occurrence of left handedness.",
     "\"Never odd or even\" spelled backward is still \"Never odd or even.\"",
 ];
-

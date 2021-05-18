@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote Generator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body>
-    <h1>Quote Generator</h1>
+  <nav>
+    <input type="search" id="searchbar" placeholder="Enter a country name" autofocus>
+    <button type="search">Search</button>
+  </nav>
 
-    <main>
-        <form>
-            <label><input type="radio" name="quote" checked> Facts</label>
-            <label><input type="radio" name="quote" disabled> Random</label>
-
-            <textarea name="" placeholder="Less is More."></textarea>
-
-            <input type="button" value="Next Quote" id="nextBtn">
-            <br>
-            <input class="hide-prev-btn" id="prevBtn" type="button" value="Previous Quote">
-        </form>
-    </main>
-
-    <script src="main.js"></script>
+  <main>
+    <section id="data">
+      <div>Country: <span id="countryName">None</span></div>
+      <div>active cases: <span id="activeCases">0.0</span></div>
+      <div>total cases: <span id="totalCases">0.0</span></div>
+      <div>critical: <span id="critical">0.0</span></div>
+      <div>tested: <span id="tested">0.0</span></div>
+      <div>deaths: <span id="deaths">0.0</span></div>
+      <div>recovered: <span id="recovered">0.0</span></div>
+      <div>death ratio: <span id="deathRatio">0.0</span></div>
+      <div>recovery ratio: <span id="recoveryRatio">0.0</span></div>
+    </section>
+  </main>
 </body>
 </html>

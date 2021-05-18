@@ -47,6 +47,13 @@ main{
   padding: 0 .5em;
 }
 
+main #error{
+  font-size: 1.6rem;
+  font-style: italic;
+  color: tomato;
+  margin-bottom: 1em;
+}
+
 #data{
   display: flex;
   flex-direction: column;

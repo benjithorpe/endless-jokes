@@ -19,9 +19,7 @@ fetch(latestSummaryAPI)
     const dataSummary = jsonResponse['data']['summary'];
     updateDataWith(dataSummary);
   })
-  .catch((error) => {
-    errorMessage.innerText = error;
-  });
+  .catch((error) => errorMessage.innerText = error);
 
 searchBar.addEventListener('keypress', (event) => {
   // code for the ENTER key is 13
@@ -45,11 +43,12 @@ function updateDataWith(data){
 }
 
 function searchAndUpdateCountry(){
-  if(!searchBar.value.trim()){
-    return;
-  }
   const searchValue = searchBar.value.trim();
   searchBar.value = "";
+
+  if(!searchValue){
+    return;
+  }
 
   fetch(countryAPI + `region=${searchValue}`)
     .then((response) => {

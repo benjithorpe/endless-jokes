@@ -1,3 +1,3 @@
-# Random Quote Generator
+# Coronavirus Statistics
 
-Generates random quotes and facts from different sites.
+Gets live stats of COVID-19.

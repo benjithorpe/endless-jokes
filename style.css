@@ -7,7 +7,7 @@
 html{ font-size: 62.5%; }
 
 body{
-  width: 95%;
+  width: 80%;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -40,6 +40,7 @@ nav button{
   color: white;
   font-size: 1.6rem;
   font-family: monospace;
+  cursor: pointer;
 }
 
 main{
@@ -71,9 +72,7 @@ main div span{
   font-weight: bold;
 }
 
-@media screen and (min-width: 400px){
-  body{ width: 80%; }
-}
+@media screen and (min-width: 400px){}
 
 @media screen and (min-width: 576px){
   nav{ flex-direction: row; }

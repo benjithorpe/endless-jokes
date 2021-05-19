@@ -11,22 +11,22 @@ const deathRatio = document.getElementById('deathRatio');
 const recoveryRatio = document.getElementById('recoveryRatio');
 const totalRecovered = document.getElementById('recovered');
 let errorParagraph = document.getElementById('error');
-const latestDataAPI = "https://api.quarantine.country/api/v1/summary/latest";
-// let countryAPI = "https://api.quarantine.country/api/v1/summary/region?region=florida&sub_areas=1"
+const latestSummaryAPI = "https://api.quarantine.country/api/v1/summary/latest";
+let countryAPI = "https://api.quarantine.country/api/v1/summary/region?";
 
 
-fetch(latestDataAPI)
+fetch(latestSummaryAPI)
   .then((response) => response.json())
   .then((jsonResponse) => {
     const dataSummary = jsonResponse['data']['summary'];
-    activeCases.innerHTML = formatNumber(dataSummary['active_cases']);
-    totalCases.innerHTML = formatNumber(dataSummary['total_cases']);
-    critical.innerHTML = formatNumber(dataSummary['critical']);
-    totalDeaths.innerHTML = formatNumber(dataSummary['deaths']);
-    deathRatio.innerHTML = formatNumber(dataSummary['death_ratio']);
-    recoveryRatio.innerHTML = formatNumber(dataSummary['recovery_ratio']);
-    totalRecovered.innerHTML = formatNumber(dataSummary['recovered']);
-    tested.innerHTML = formatNumber(dataSummary['tested']);
+    activeCases.innerText = formatNumber(dataSummary['active_cases']);
+    totalCases.innerText = formatNumber(dataSummary['total_cases']);
+    critical.innerText = formatNumber(dataSummary['critical']);
+    totalDeaths.innerText = formatNumber(dataSummary['deaths']);
+    deathRatio.innerText = formatNumber(dataSummary['death_ratio']);
+    recoveryRatio.innerText = formatNumber(dataSummary['recovery_ratio']);
+    totalRecovered.innerText = formatNumber(dataSummary['recovered']);
+    tested.innerText = formatNumber(dataSummary['tested']);
   })
   .catch((error) => {
     errorParagraph.innerText = error;
@@ -37,24 +37,34 @@ function formatNumber(number) {
 }
 
 searchBar.addEventListener('input', function(){});
+
 searchBtn.addEventListener('click', function(){
+  if(!searchBar.value.trim()){
+    return;
+  }
   const searchValue = searchBar.value.trim();
-  console.log(searchValue);
   searchBar.value = "";
 
-  // fetch(countryAPI, {
-  //   headers: {},
-  //   params: {}
-  // })
+  fetch(countryAPI + `region=${searchValue}`)
+  .then((res) => {
+    if(res.ok){
+      errorParagraph.innerText = "";
+      return res.json();
+    }else{
+      errorParagraph.innerText = `Region or Country (${searchValue}) Does not Exists!!`;
+      return;
+    }
+  })
+  .then((data) => {
+    const regionSummary = data['data']['summary'];
+    countryName.innerText = searchValue;
+    activeCases.innerText = formatNumber(regionSummary['active_cases']);
+    totalCases.innerText = formatNumber(regionSummary['total_cases']);
+    critical.innerText = formatNumber(regionSummary['critical']);
+    totalDeaths.innerText = formatNumber(regionSummary['deaths']);
+    deathRatio.innerText = formatNumber(regionSummary['death_ratio']);
+    recoveryRatio.innerText = formatNumber(regionSummary['recovery_ratio']);
+    totalRecovered.innerText = formatNumber(regionSummary['recovered']);
+    tested.innerText = formatNumber(regionSummary['tested']);
+  })
 });
-
-
-// var requestOptions = {
-//   method: 'GET',
-//   redirect: 'follow'
-// };
-
-// fetch("https://api.quarantine.country/api/v1/spots/summary", requestOptions)
-//   .then(response => response.text())
-//   // .then(result => console.log(result))
-//   .catch(error => console.log('error', error));

@@ -7,18 +7,18 @@
   <title>Corona Statistics Update</title>
 
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="data.json" defer></script>
   <script src="main.js" defer></script>
 </head>
 
 <body>
   <nav>
-    <input type="search" id="searchbar" placeholder="Enter a country name" autofocus>
-    <button type="search">Search</button>
+    <select name="countries" id="select">
+      <option value="ww" disabled selected>-- Choose Country --</option>
+    </select>
   </nav>
 
   <main>
-    <p id="error"></p>
-
     <section id="data">
       <div>Country: <span id="countryName">World Wide</span></div>
       <div>active cases: <span id="activeCases">0.0</span></div>
